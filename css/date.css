@@ -1,4 +1,5 @@
 .time {
+  text-align: left;
   font-family: "Poppins", sans-serif;
   min-height: 124px;
   margin-bottom: 10px;
@@ -7,8 +8,46 @@
 }
 
 .date {
-  font-family: "Poppins", sans-serif;
   min-height: 28px;
   font-size: 24px;
   margin-bottom: 20px;
+}
+
+.greeting {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100vw;
+  font-size: 40px;
+}
+.greeting__text {
+  padding: 10px;
+}
+.greeting__name {
+  padding: 10px;
+  font-size: 40px;
+  background-color: transparent;
+}
+.greeting__name::-webkit-input-placeholder {
+  opacity: 0.6;
+}
+.greeting__name::-moz-placeholder {
+  opacity: 0.6;
+}
+.greeting__name:-ms-input-placeholder {
+  opacity: 0.6;
+}
+.greeting__name::-ms-input-placeholder {
+  opacity: 0.6;
+}
+.greeting__name::placeholder {
+  opacity: 0.6;
 }
