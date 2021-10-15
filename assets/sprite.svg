@@ -1,0 +1,6 @@
+<svg style="display: none;" xmlns="http://www.w3.org/2000/svg">
+	<symbol viewBox="0 0 50 80" id="arrowRight">
+    <polyline fill="none" stroke-linecap="round" stroke-linejoin="round" points="
+	0.375,0.375 45.63,38.087 0.375,75.8 "/>
+	</symbol>
+</svg>

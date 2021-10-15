@@ -38,3 +38,37 @@
     }
   }
 }
+.slider-icon {
+  width: 60px;
+  height: 80px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  background: none;
+  svg {
+    width: 60px;
+    height: 80px;
+    stroke: #fff;
+  }
+  &:hover svg {
+    stroke: rgb(228, 228, 228);
+    stroke-width: 2;
+    transition: all 150ms ease-in-out;
+  }
+  &:active svg {
+    transform: scale(0.95);
+    stroke: rgb(211, 211, 211);
+    stroke-width: 5;
+    transition: all 150ms ease-in-out;
+  }
+}
+
+.slide-prev {
+  left: 20px;
+  transform: rotate(180deg);
+}
+
+.slide-next {
+  right: 20px;
+}

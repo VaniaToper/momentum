@@ -20,7 +20,7 @@
           <ul class="play-list"></ul>
         </div>
         <div class="weather">
-          <input type="text" class="city" />
+          <input type="text" class="city" value="Minsk" />
           <i class="weather-icon owf"></i>
           <div class="weather-error"></div>
           <div class="description-container">
@@ -32,10 +32,16 @@
         </div>
       </header>
       <main class="main">
-        <div class="slider-icons">
-          <button class="slide-prev slider-icon"></button>
-          <button class="slide-next slider-icon"></button>
-        </div>
+        <button class="slide-prev slider-icon">
+          <svg>
+            <use xlink:href="assets/sprite.svg#arrowRight"></use>
+          </svg>
+        </button>
+        <button class="slide-next slider-icon">
+          <svg>
+            <use xlink:href="assets/sprite.svg#arrowRight"></use>
+          </svg>
+        </button>
         <time class="time"></time>
         <date class="date"></date>
         <div class="greeting">
@@ -52,6 +58,6 @@
       </footer>
     </div>
     <script src="js/date.js"></script>
-    <script src="js/backgroung.js"></script>
+    <script src="js/weather.js"></script>
   </body>
 </html>
