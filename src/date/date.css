@@ -14,24 +14,13 @@
 }
 
 .greeting {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  width: 100vw;
   font-size: 40px;
 }
 .greeting__text {
   padding: 10px;
 }
 .greeting__name {
+  max-width: 250px;
   padding: 10px;
   font-size: 40px;
   background-color: transparent;

@@ -1,0 +1,23 @@
+.change-quote {
+  width: 100px;
+  height: 100px;
+  margin-bottom: 30px;
+  background: url("../../assets/img/reload.svg");
+  background-size: cover;
+  transition: 0.5s;
+  &:hover{
+    opacity: 0.8;
+  }
+}
+
+.quote {
+  font-size: 35px;
+  line-height: 40px;
+  min-height: 32px;
+}
+
+.author {
+  font-size: 27px;
+  line-height: 55px;
+  min-height: 20px;
+}

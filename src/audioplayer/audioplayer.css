@@ -1,0 +1,144 @@
+.player {
+  margin-top: 30px;
+  width: 300px;
+  height: 350px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.player-controls {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.player-progress {
+  width: 90%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 10px 0;
+}
+.player-progress-text {
+  font-size: 16px;
+  letter-spacing: 1.5px;
+}
+.player-progress-input {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  height: 7px;
+  width: 100%;
+  border-radius: 3px;
+}
+.player-progress-input::-webkit-slider-thumb {
+  -webkit-appearance: none;
+          appearance: none;
+  width: 15px;
+  height: 15px;
+  border-radius: 50px;
+  background: #c2c2c2;
+}
+.player-icon {
+  width: 60px;
+  height: 60px;
+  background-size: contain !important;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+.player-icon:hover {
+  opacity: 0.95;
+}
+.player-icon:active {
+  opacity: 0.8;
+  -webkit-transform: scale(0.96);
+          transform: scale(0.96);
+}
+.player-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 10px 0;
+}
+.player-music {
+  position: relative;
+  font-size: 30px;
+  background: none;
+  text-align: left;
+}
+.player-music::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 60px;
+  height: 60px;
+  background: url("../../assets/img/play-button.png");
+  background-size: contain;
+}
+
+.play {
+  background: url("../../assets/img/play.png");
+}
+.play-prev {
+  background: url("../../assets/img/previous.png");
+}
+.play-next {
+  background: url("../../assets/img/next.png");
+}
+.play-volume-button {
+  width: 45px;
+  height: 46px;
+  background: url("../../assets/img/volume.png");
+}
+
+.pause {
+  background: url("../../assets/img/pause.png");
+}
+
+.volume-control {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 0 20px;
+}
+.volume-progress {
+  width: 50%;
+}
+
+.muted {
+  background: url("../../assets/img/mute.png");
+}

@@ -20,16 +20,12 @@
   margin-bottom: 20px;
 }
 .greeting {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  width: 100vw;
-  font-size: 40px;
+    font-size: 40px;
   &__text {
     padding: 10px;
   }
   &__name {
+    max-width: 250px;
     padding: 10px;
     font-size: 40px;
     background-color: transparent;

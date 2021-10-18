@@ -2,7 +2,9 @@ const weatherIcon = document.querySelector('.weather-icon');
 const temperature = document.querySelector('.temperature');
 const weatherDescription = document.querySelector('.weather-description');
 const city = document.querySelector('.city');
-
+city.value = localStorage.getItem('town')
+if (city.value === '') city.value = 'Minsk'
+console.log(city.value);
 async function getWeather() {
   const url = `https://api.openweathermap.org/data/2.5/weather?q=${city.value}&lang=ru&appid=404aa4276ea9b5257a6608fa41b63388&units=metric`;
   const res = await fetch(url);
@@ -14,5 +16,6 @@ async function getWeather() {
 }
 getWeather();
 city.addEventListener('change', () => {
+  localStorage.setItem('town', city.value)
   getWeather()
 });

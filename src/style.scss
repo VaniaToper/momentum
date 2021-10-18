@@ -1,9 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap");
-@import url("/css/date.css");
-@import url("/css/weather.css");
+@import url("/src/date/date.css");
+@import url("/src/weather/weather.css");
+@import url("/src/quote/quote.css");
+@import url("/src/audioplayer/audioplayer.css");
 @import "nullstyle.scss";
 * {
   font-family: "Poppins", sans-serif;
+  color: white;
 }
 .wrapper {
   min-width: 480px;
@@ -30,6 +33,16 @@
   align-items: center;
   width: 100%;
   height: 40vh;
-  min-height: 260px;
+  min-height: 260px;  
+  padding: 20px;
+}
+.footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
+  height: 30vh;
+  min-height: 160px;  
   padding: 20px;
 }
