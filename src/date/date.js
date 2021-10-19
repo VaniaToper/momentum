@@ -87,3 +87,13 @@ function getLocalStorage() {
   }
 }
 window.addEventListener('load', getLocalStorage);
+
+// async function getLinkToImage() {
+//   const url =
+//     'https://api.unsplash.com/photos/random?orientation=landscape&query=nature&client_id=I9t3C-gPIbaN7XhSRrja6qtBsnxHNkJBMQm7yvpk5rc';
+//   const res = await fetch(url);
+//   const data = await res.json();
+//   console.log(data.urls.regular);
+// }
+
+// getLinkToImage();

@@ -3,6 +3,7 @@
 @import url("/src/weather/weather.css");
 @import url("/src/quote/quote.css");
 @import url("/src/audioplayer/audioplayer.css");
+@import url("/src/settings/settings.css");
 @import "nullstyle.scss";
 * {
   font-family: "Poppins", sans-serif;
@@ -15,6 +16,7 @@
   text-align: center;
   background-blend-mode: multiply;
   transition: background-image 0.5s ease-in-out;
+  overflow: hidden;
 }
 .header {
   display: flex;

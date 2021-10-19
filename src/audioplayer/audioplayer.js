@@ -8,6 +8,8 @@ const playerNext = document.querySelector('.play-next');
 const muteButton = document.querySelector('.play-volume-button');
 const audioCurrent = document.querySelector('.current-value');
 const audioDuration = document.querySelector('.duration');
+const audioMusic = document.querySelectorAll('.player-music');
+const audioMusicImage = document.querySelectorAll('.player-music-img');
 let currentMusic = 0;
 let playerMousedown = false;
 const getColor = (x) => `linear-gradient(90deg, #cfcfcf ${x}%, #FFFFFF ${x}%)`;
@@ -114,3 +116,14 @@ playerNext.addEventListener('click', () => {
   getNextMusic();
   togglePlay();
 });
+
+for (let i = 0; i < audioMusic.length; i++) {
+  audioMusic[i].addEventListener('click', () => {
+    playerAudio.src = playList[i].src;
+    audioDuration.innerHTML = playList[i].duration;
+    if (playerAudio.paused) {
+      audioMusic[i].style.opacity = '0.6';
+    }
+    togglePlay();
+  });
+}

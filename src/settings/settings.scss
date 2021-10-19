@@ -1,0 +1,64 @@
+.settings {
+  display: none;
+  position: absolute;
+  top: 50%;
+  width: 60%;
+  height: 70%;
+  background: #f7f7f7;
+  border-radius: 3px;
+  &-icon {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background: url("/assets/img/settings.png");
+    background-size: contain;
+    background-position: center center;
+  }
+  &-checkbox {
+    cursor: pointer;
+  }
+  &__hide-blocks {
+    label {
+      cursor: pointer;
+      user-select: none;
+      font-size: 30px;
+      color: black;
+    }
+  }
+  &-button-close {
+    background: url("/assets/img/cancel.png");
+    top: 20px;
+  }
+}
+.anim-open{
+  animation: animSettingsOpen 0.5s;
+}
+.anim-close{
+  animation: animSettingsClose 0.5s;
+}
+@keyframes animSettingsOpen {
+  0% {
+    display: none;
+    transform: translateY(0%);
+    opacity: 0;
+  }
+  100% {
+    display: block;
+    transform: translateY(-50%);
+    opacity: 1;
+  }
+}
+@keyframes animSettingsClose {
+  0% {
+    display: block;
+    transform: translateY(-50%);
+    opacity: 1;
+  }
+  100% {
+    display: none;
+    transform: translateY(0%);
+    opacity: 0;
+  }
+}

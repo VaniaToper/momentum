@@ -12,26 +12,28 @@
     <div class="wrapper">
       <header class="header">
         <div class="player">
-          <audio src="assets/music/assets_sounds_Aqua_Caelestis.mp3" class="player-audio"></audio>
-          <div class="player-progress">
-            <input type="range" class="player-progress-input" max="100" min="0" value="0">
-            <span class="current-value player-progress-text">0:00</span>
-            <span class="duration player-progress-text">0:39</span>
-          </div>
-          <div class="player-controls">
-            <button class="play-prev player-icon"></button>
-            <button class="play player-icon"></button>
-            <button class="play-next player-icon"></button>
-          </div>
-          <div class="volume-control">
-            <button class="play-volume-button player-icon"></button>
-            <input type="range" class="player-progress-input volume-progress" name="volume" min="0" max="1" step="0.01">
+          <div class="player-body">
+            <audio src="assets/music/assets_sounds_Aqua_Caelestis.mp3" class="player-audio"></audio>
+            <div class="player-progress">
+              <input type="range" class="player-progress-input" max="100" min="0" value="0">
+              <span class="current-value player-progress-text">0:00</span>
+              <span class="duration player-progress-text">0:39</span>
+            </div>
+            <div class="player-controls">
+              <button class="play-prev player-icon"></button>
+              <button class="play player-icon"></button>
+              <button class="play-next player-icon"></button>
+            </div>
+            <div class="volume-control">
+              <button class="play-volume-button player-icon"></button>
+              <input type="range" class="player-progress-input volume-progress" name="volume" min="0" max="1" step="0.01">
+            </div>
           </div>
           <ul class="player-list">
-            <li class="player-music">Aqua Caelestis</li>
-            <li class="player-music">Ennio Morricone</li>
-            <li class="player-music">River Flows In You</li>
-            <li class="player-music">Summer Wind</li>
+            <li class="player-music"><img class="player-music-img" src="assets/img/play-button.png" alt="error"> Aqua Caelestis</li>
+            <li class="player-music"><img class="player-music-img" src="assets/img/play-button.png" alt="error"> Ennio Morricone</li>
+            <li class="player-music"><img class="player-music-img" src="assets/img/play-button.png" alt="error"> River Flows In You</li>
+            <li class="player-music"><img class="player-music-img" src="assets/img/play-button.png" alt="error"> Summer Wind</li>
           </ul>
         </div>
         <div class="weather">
@@ -65,10 +67,32 @@
         </div>
       </main>
       <footer class="footer">
-        <button class="change-quote"></button>
-        <div>
+        <div class='quote-block'>
+          <button class="change-quote"></button>
           <div class="quote">Ходить по воде и разрабатывать программы, следуя ТЗ, очень просто… если они заморожены</div>
           <div class="author">И. Берард</div>
+        </div>
+        <button class="settings-button-open settings-icon player-icon"></button>
+        <div class="settings">
+          <button class="settings-button-close settings-icon player-icon"></button>
+          <div class="setting__body">
+            <div class="settings__hide-blocks">
+              <input type="checkbox" name="hide" class="settings-checkbox" id="block1">
+              <label for="block1">Player</label>
+              <input type="checkbox" name="hide" class="settings-checkbox" id="block2">
+              <label for="block2">Time</label>
+              <input type="checkbox" name="hide" class="settings-checkbox" id="block3">
+              <label for="block3">Date</label>
+              <input type="checkbox" name="hide" class="settings-checkbox" id="block4">
+              <label for="block4">Quote</label>
+              <input type="checkbox" name="hide" class="settings-checkbox" id="block5">
+              <label for="block5">Greeting</label>
+              <input type="checkbox" name="hide" class="settings-checkbox" id="block6">
+              <label for="block6">Weather</label>
+              <input type="checkbox" name="hide" class="settings-checkbox" id="block7">
+              <label for="block7"></label>
+            </div>
+          </div>
         </div>
       </footer>
     </div>
@@ -76,5 +100,6 @@
     <script src="src/weather/weather.js"></script>
     <script src="src/quote/quote.js"></script>
     <script type="module" src="src/audioplayer/audioplayer.js"></script>
+    <script src="src/settings/settings.js"></script>
   </body>
 </html>
