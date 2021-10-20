@@ -16,6 +16,11 @@
     justify-content: space-between;
     align-items: center;
   }
+  &-title {
+    font-size: 22px;
+    padding-bottom: 10px;
+    transition: 0.2s;
+  }
   &-progress {
     width: 90%;
     display: flex;
@@ -62,20 +67,23 @@
   &-music {
     position: relative;
     z-index: 1;
-    background: none;
+    height: 50px;
     display: flex;
     align-items: center;
+    padding-left: 65px;
     text-align: left;
     font-size: 30px;
     user-select: none;
     transition: 0.2s;
-    gap: 15px;
-    &:hover{
+    background-image: url("../../assets/img/play-button.png");
+    background-repeat: no-repeat;
+    background-size: 50px 50px;
+    &:hover {
       opacity: 0.8;
     }
-    img{
-      width: 50px;
-      height: 50px;
+    &-pause {
+      opacity: 0.6;
+      background-image: url("../../assets/img/pause-button.png");
     }
   }
 }

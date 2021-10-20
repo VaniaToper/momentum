@@ -1,5 +1,6 @@
 import playList from './playList.js';
 const playButton = document.querySelector('.play');
+const playerTitle = document.querySelector('.player-title');
 const playerProgress = document.querySelector('.player-progress-input');
 const playerVolume = document.querySelector('.volume-progress');
 const playerAudio = document.querySelector('.player-audio');
@@ -24,6 +25,46 @@ const togglePlay = () => {
   }
 };
 playButton.addEventListener('click', togglePlay);
+
+const getPrevMusic = () => {
+  currentMusic--;
+  if (currentMusic < 0) {
+    currentMusic = 3;
+  }
+  playerAudio.src = playList[currentMusic].src;
+  audioDuration.innerHTML = playList[currentMusic].duration;
+};
+playerPrev.addEventListener('click', () => {
+  getPrevMusic();
+  togglePlay();
+});
+
+const getNextMusic = () => {
+  currentMusic++;
+  if (currentMusic > 3) {
+    currentMusic = 0;
+  }
+  playerAudio.src = playList[currentMusic].src;
+  audioDuration.innerHTML = playList[currentMusic].duration;
+};
+playerNext.addEventListener('click', () => {
+  getNextMusic();
+  togglePlay();
+});
+
+let musicArray = Array.from(audioMusic);
+for (let i = 0; i < audioMusic.length; i++) {
+  audioMusic[i].addEventListener('click', () => {
+    musicArray.map((x) => {
+      x.classList.remove('player-music-pause');
+    });
+    playerAudio.src = playList[i].src;
+    audioDuration.innerHTML = playList[i].duration;
+    audioMusic[i].classList.add('player-music-pause');
+    playerTitle.innerHTML = playList[i].title;
+    togglePlay();
+  });
+}
 
 const volumeButton = () => {
   let { name } = playerVolume;
@@ -64,8 +105,8 @@ muteButton.addEventListener('click', () => {
 
 const progressUpdate = () => {
   let { currentTime, duration } = playerAudio;
-  const x = (currentTime / duration) * 100;
-  playerProgress.style.background = getColor(x);
+  const percent = (currentTime / duration) * 100;
+  playerProgress.style.background = getColor(percent);
   let currentTimeSeconds = currentTime % 60;
   let currentTimeMinutes = Math.floor(currentTime / 60);
   audioCurrent.innerHTML =
@@ -73,7 +114,11 @@ const progressUpdate = () => {
     ':' +
     Math.round(currentTimeSeconds).toString().padStart(2, '0');
   if (!playerMousedown) {
-    playerProgress.value = x;
+    playerProgress.value = percent;
+  }
+  if (percent === 100) {
+    getNextMusic();
+    togglePlay();
   }
 };
 
@@ -90,40 +135,3 @@ playerProgress.addEventListener('mousemove', () => {
   const x = playerProgress.value;
   playerProgress.style.background = getColor(x);
 });
-
-const getPrevMusic = () => {
-  currentMusic--;
-  if (currentMusic < 0) {
-    currentMusic = 3;
-  }
-  playerAudio.src = playList[currentMusic].src;
-  audioDuration.innerHTML = playList[currentMusic].duration;
-};
-playerPrev.addEventListener('click', () => {
-  getPrevMusic();
-  togglePlay();
-});
-
-const getNextMusic = () => {
-  currentMusic++;
-  if (currentMusic > 3) {
-    currentMusic = 0;
-  }
-  playerAudio.src = playList[currentMusic].src;
-  audioDuration.innerHTML = playList[currentMusic].duration;
-};
-playerNext.addEventListener('click', () => {
-  getNextMusic();
-  togglePlay();
-});
-
-for (let i = 0; i < audioMusic.length; i++) {
-  audioMusic[i].addEventListener('click', () => {
-    playerAudio.src = playList[i].src;
-    audioDuration.innerHTML = playList[i].duration;
-    if (playerAudio.paused) {
-      audioMusic[i].style.opacity = '0.6';
-    }
-    togglePlay();
-  });
-}

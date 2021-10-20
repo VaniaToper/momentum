@@ -13,6 +13,7 @@
       <header class="header">
         <div class="player">
           <div class="player-body">
+            <div class="player-title">Aqua Caelestis</div>
             <audio src="assets/music/assets_sounds_Aqua_Caelestis.mp3" class="player-audio"></audio>
             <div class="player-progress">
               <input type="range" class="player-progress-input" max="100" min="0" value="0">
@@ -30,10 +31,10 @@
             </div>
           </div>
           <ul class="player-list">
-            <li class="player-music"><img class="player-music-img" src="assets/img/play-button.png" alt="error"> Aqua Caelestis</li>
-            <li class="player-music"><img class="player-music-img" src="assets/img/play-button.png" alt="error"> Ennio Morricone</li>
-            <li class="player-music"><img class="player-music-img" src="assets/img/play-button.png" alt="error"> River Flows In You</li>
-            <li class="player-music"><img class="player-music-img" src="assets/img/play-button.png" alt="error"> Summer Wind</li>
+            <li class="player-music player-music-pause">Aqua Caelestis</li>
+            <li class="player-music">Ennio Morricone</li>
+            <li class="player-music">River Flows In You</li>
+            <li class="player-music">Summer Wind</li>
           </ul>
         </div>
         <div class="weather">
@@ -98,7 +99,7 @@
     </div>
     <script src="src/date/date.js"></script>
     <script src="src/weather/weather.js"></script>
-    <script src="src/quote/quote.js"></script>
+    <script type="module" src="src/quote/quote.js"></script>
     <script type="module" src="src/audioplayer/audioplayer.js"></script>
     <script src="src/settings/settings.js"></script>
   </body>
