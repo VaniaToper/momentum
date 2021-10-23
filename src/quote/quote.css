@@ -18,7 +18,8 @@
 }
 
 .author {
-  font-size: 27px;
+  font-size: 25px;
   line-height: 55px;
   min-height: 20px;
+  opacity: 0.9;
 }

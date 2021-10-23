@@ -1,52 +1,66 @@
+import { getRandomNum } from '../index.js';
+import { isChecked } from '../index.js';
 const timeMomentum = document.querySelector('.time');
 const dateMomentum = document.querySelector('.date');
 const greeting = document.querySelector('.greeting__text');
 const greetingInput = document.querySelector('.greeting__name');
 const wrapper = document.querySelector('.wrapper');
 const slidePrev = document.querySelector('.slide-prev');
+const settingsCheckbox = document.querySelector('.settings-lang');
 const slideNext = document.querySelector('.slide-next');
-let randomNum;
+let randomNum = getRandomNum(20, 2);
 
 const getTimeOfDate = () => {
   const date = new Date();
   const hours = date.getHours();
   const minutes = date.getMinutes();
-  if (hours >= 6 && hours <= 11 && minutes <= 59) {
-    return (part = 'Morning');
-  }
-  if (hours >= 12 && hours <= 17 && minutes <= 59) {
-    return (part = 'Day');
-  }
-  if (hours >= 18 && hours <= 23 && minutes <= 59) {
-    return (part = 'Evening');
-  }
-  if (hours >= 0 && hours <= 5 && minutes <= 59) {
-    return (part = 'Night');
+  let lang = isChecked(settingsCheckbox, 'ru', 'en');
+  if (lang === 'en') {
+    if (hours >= 6 && hours <= 11 && minutes <= 59) {
+      return 'Morning';
+    }
+    if (hours >= 12 && hours <= 17 && minutes <= 59) {
+      return 'Day';
+    }
+    if (hours >= 18 && hours <= 23 && minutes <= 59) {
+      return 'Evening';
+    }
+    if (hours >= 0 && hours <= 5 && minutes <= 59) {
+      return 'Night';
+    }
+  } else {
+    if (hours >= 6 && hours <= 11 && minutes <= 59) {
+      return 'Доброе утро';
+    }
+    if (hours >= 12 && hours <= 17 && minutes <= 59) {
+      return 'Добрый день';
+    }
+    if (hours >= 18 && hours <= 23 && minutes <= 59) {
+      return 'Добрый вечер';
+    }
+    if (hours >= 0 && hours <= 5 && minutes <= 59) {
+      return 'Доброй ночи';
+    }
   }
 };
 
-const getRandomNum = (() => {
-  randomNum = Math.ceil(Math.random() * 20).toString();
-  randomNum = randomNum.padStart(2, '0');
-  return randomNum;
-})();
-
-const setBackground = () => {
-  getTimeOfDate();
+const setBackground = (randomNum) => {
+  const part = getTimeOfDate();
   const img = new Image();
+
   img.src = `/assets/img/${part.toLowerCase()}/${randomNum}.jpg`;
   img.addEventListener('load', () => {
     wrapper.style.background = `url("/assets/img/${part.toLowerCase()}/${randomNum}.jpg") center/cover`;
   });
 };
 
-setBackground();
+setBackground(randomNum);
 const getSlideNext = () => {
   if (randomNum < 20) {
     randomNum = (parseInt(randomNum) + 1).toString();
     randomNum = randomNum.padStart(2, '0');
   } else randomNum = '01';
-  setBackground();
+  setBackground(randomNum);
 };
 
 const getSlidePrev = () => {
@@ -54,23 +68,24 @@ const getSlidePrev = () => {
     randomNum = (parseInt(randomNum) - 1).toString();
     randomNum = randomNum.padStart(2, '0');
   } else randomNum = '20';
-  setBackground();
+  setBackground(randomNum);
 };
 
 slideNext.addEventListener('click', getSlideNext);
 slidePrev.addEventListener('click', getSlidePrev);
 
-const showTime = () => {
+const showTime = (lang = 'en-En') => {
+  lang = isChecked(settingsCheckbox, 'ru-Ru', 'en-En');
   const date = new Date();
-  getTimeOfDate();
-  greeting.textContent = `Good ${part},`;
+  const part = getTimeOfDate();
+  greeting.textContent = `${part},`;
   const currentTime = date.toLocaleTimeString();
   const options = {
     month: 'long',
     day: 'numeric',
     timeZone: 'UTC',
   };
-  const currentDate = date.toLocaleDateString('ru-Ru', options);
+  const currentDate = date.toLocaleDateString(lang, options);
   timeMomentum.textContent = currentTime;
   dateMomentum.textContent = currentDate;
   setTimeout(showTime, 1000);
