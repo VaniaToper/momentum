@@ -2,22 +2,22 @@
   margin-top: 30px;
   display: flex;
   flex-direction: column;
-  gap: 50px 0;
+  gap: 30px 0;
   &-controls {
     width: 100%;
     display: flex;
     justify-content: space-between;
   }
   &-body {
-    width: 300px;
-    height: 200px;
+    width: 250px;
+    height: 170px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
   }
   &-title {
-    font-size: 22px;
+    font-size: 20px;
     padding-bottom: 10px;
     transition: 0.2s;
   }
@@ -34,7 +34,7 @@
   }
   &-progress-input {
     appearance: none;
-    height: 7px;
+    height: 5px;
     width: 100%;
     border-radius: 3px;
     &::-webkit-slider-thumb {
@@ -46,8 +46,8 @@
     }
   }
   &-icon {
-    width: 60px;
-    height: 60px;
+    width: 40px;
+    height: 40px;
     background-size: contain !important;
     transition: 0.2s;
     &:hover {
@@ -61,7 +61,7 @@
   &-list {
     display: flex;
     flex-direction: column;
-    gap: 35px 0;
+    gap: 5px 0;
     cursor: pointer;
   }
   &-music {
@@ -70,14 +70,15 @@
     height: 50px;
     display: flex;
     align-items: center;
-    padding-left: 65px;
+    padding-left: 47px;
     text-align: left;
-    font-size: 30px;
+    font-size: 20px;
     user-select: none;
     transition: 0.2s;
     background-image: url("../../assets/img/play-button.png");
     background-repeat: no-repeat;
-    background-size: 50px 50px;
+    background-size: 40px 40px;
+    background-position-y: center;
     &:hover {
       opacity: 0.8;
     }
@@ -96,8 +97,8 @@
     background: url("../../assets/img/next.png");
   }
   &-volume-button {
-    width: 45px;
-    height: 46px;
+    width: 30px;
+    height: 31px;
     background: url("../../assets/img/volume.png");
   }
 }
@@ -120,4 +121,20 @@
 }
 .muted {
   background: url("../../assets/img/mute.png");
+}
+@media screen and (max-width: 768px) {
+  .player{
+    &-body{
+      width: 170px;
+    }
+    &-list{
+      
+      gap: 0;
+    }
+    &-music{
+      padding-left: 36px;
+      font-size: 15px;
+      background-size: 30px 30px;
+    }
+  }
 }

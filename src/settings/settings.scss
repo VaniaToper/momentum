@@ -1,15 +1,45 @@
+$darkGrey: #4b4b4b;
+$lightGrey: #9c9e9f;
+$white: #fff;
+$green: #06842c;
+$clouds: #ecf0f1;
+$midnight: #2c3e50;
 .settings {
   display: none;
   position: absolute;
+  z-index: 2;
   top: 50%;
-  width: 60%;
-  height: 70%;
+  width: 30%;
+  height: 50%;
   background: #f7f7f7;
   border-radius: 3px;
+  &__body {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  &__image {
+    padding-top: 15px;
+    gap: 30px 0;
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+  }
+  &__header {
+    width: 100%;
+    padding: 15px 0;
+    text-align: center;
+    color: $darkGrey;
+    font-size: 50px;
+    border-bottom: 1.5px solid $lightGrey;
+  }
   &-icon {
     position: absolute;
-    width: 50px;
-    height: 50px;
+    width: 30px;
+    height: 30px;
     background: url("/assets/img/settings.png");
     background-size: contain;
     background-position: center center;
@@ -18,14 +48,92 @@
     cursor: pointer;
   }
   &__hide-blocks {
-    label {
+    padding: 15px;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 20px 0;
+    &__label {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
       cursor: pointer;
-      user-select: none;
-      font-size: 30px;
-      color: black;
+      span {
+        color: $lightGrey;
+        font-size: 23px;
+      }
+    }
+    input {
+      position: relative !important;
+      appearance: none;
+      margin: 8px;
+      box-sizing: content-box;
+      overflow: hidden;
+      &:before {
+        content: "";
+        display: block;
+        box-sizing: content-box;
+        width: 16px;
+        height: 16px;
+        border: 2px solid #ccc;
+        transition: 0.2s border-color ease;
+      }
+      &:checked:before {
+        border-color: #12cbc4;
+        transition: 0.5s border-color ease;
+      }
+      &:disabled:before {
+        border-color: #ccc;
+        background-color: #ccc;
+      }
+      &:after {
+        content: "";
+        display: block;
+        position: absolute;
+        box-sizing: content-box;
+        top: 50%;
+        left: 50%;
+        transform-origin: 50% 50%;
+        background-color: #12cbc4;
+        width: 16px;
+        height: 16px;
+        border-radius: 100vh;
+        transform: translate(-50%, -50%) scale(0);
+      }
+      &[type="checkbox"] {
+        &:before {
+          border-radius: 16px / 4;
+        }
+        &:after {
+          width: 16px * 0.6;
+          height: 16px;
+          border-radius: 0;
+          transform: translate(-50%, -85%) scale(0) rotate(45deg);
+          background-color: transparent;
+          box-shadow: 4px 4px 0px 0px #12cbc4;
+        }
+        &:checked:after {
+          animation: toggleOnCheckbox 0.2s ease forwards;
+        }
+      }
+      &[type="checkbox"].filled {
+        &:before {
+          border-radius: 16px / 4;
+          transition: 0.2s border-color ease, 0.2s background-color ease;
+        }
+        &:checked:not(:disabled):before {
+          background-color: #12cbc4;
+        }
+        &:not(:disabled):after {
+          box-shadow: 4px 4px 0px 0px white;
+        }
+      }
     }
   }
   &-button-open {
+    z-index: 2;
     bottom: 20px;
     left: 20px;
   }
@@ -33,6 +141,15 @@
     background: url("/assets/img/cancel.png");
     top: 20px;
     right: 20px;
+  }
+  &__language {
+    width: 50%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    &__text {
+      color: $lightGrey;
+    }
   }
 }
 .switch {
@@ -73,11 +190,11 @@
 }
 
 input:checked + .slider {
-  background-color: #2196f3;
+  background-color: #ff6e4e;
 }
 
 input:focus + .slider {
-  box-shadow: 0 0 1px #2196f3;
+  box-shadow: 0 0 1px #ff6e4e;
 }
 
 input:checked + .slider:before {
@@ -87,6 +204,7 @@ input:checked + .slider:before {
 }
 
 .slider.round {
+  width: 60px;
   border-radius: 34px;
 }
 
@@ -100,6 +218,86 @@ input:checked + .slider:before {
 .anim-close {
   animation: animSettingsClose 0.5s;
 }
+.image-API {
+  display: flex;
+  flex-direction: column;
+  gap: 5px 0;
+  width: 50%;
+  &__tag {
+    width: 70%;
+    height: 30px;
+    padding-left: 7px;
+    border-radius: 3px;
+    background: rgb(211, 211, 211);
+    box-shadow: 0px 1.5px 5px 0px rgba(158, 158, 158, 1);
+  }
+  &__radio {
+    position: absolute;
+    opacity: 0;
+    z-index: -1;
+  }
+  &__label {
+    position: relative;
+    margin-right: 1em;
+    padding-left: 2em;
+    padding-right: 1em;
+    line-height: 2;
+    cursor: pointer;
+    color: $darkGrey;
+    &:before {
+      box-sizing: border-box;
+      content: " ";
+      position: absolute;
+      top: 0.3em;
+      left: 0;
+      display: block;
+      width: 1.4em;
+      height: 1.4em;
+      border: 2px solid $darkGrey;
+      border-radius: 0.25em;
+      z-index: -1;
+    }
+  }
+  &__radio + &__label::before {
+    border-radius: 1em;
+  }
+  /* Checked */
+  &__radio:checked + &__label {
+    font-size: 15px;
+    padding-left: 1em;
+    color: $darkGrey;
+    &:before {
+      top: 0;
+      width: 100%;
+      height: 2em;
+      background: #ff6e4e;
+      border: 2px solid #ff7c5f;
+    }
+  }
+  &__label,
+  &__label::before {
+    -webkit-transition: 0.25s all ease;
+    -o-transition: 0.25s all ease;
+    transition: 0.25s all ease;
+  }
+}
+
+@keyframes toggleOnCheckbox {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -85%) scale(0) rotate(45deg);
+  }
+
+  70% {
+    opacity: 1;
+    transform: translate(-50%, -85%) scale(0.9) rotate(45deg);
+  }
+
+  100% {
+    transform: translate(-50%, -85%) scale(0.8) rotate(45deg);
+  }
+}
+
 @keyframes animSettingsOpen {
   0% {
     display: none;
@@ -122,5 +320,28 @@ input:checked + .slider:before {
     display: none;
     transform: translateY(0%);
     opacity: 0;
+  }
+}
+
+@media screen and(max-width:1920px) {
+  .settings {
+    width: 50%;
+
+  }
+}
+@media screen and(max-width:1024px) {
+  .settings {
+    width: 70%;
+    &__language{
+      width: 70%;
+    }
+  }
+}
+@media screen and(max-width:768px) {
+  .settings {
+    width: 90%;
+    &__language{
+      width: 90%;
+    }
   }
 }

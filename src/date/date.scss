@@ -1,18 +1,11 @@
 .time {
+  width: 400px;
   text-align: left;
   font-family: "Poppins", sans-serif;
-  min-height: 124px;
   margin-bottom: 10px;
   font-size: 100px;
-  letter-spacing: -2px;
-  // span{
-  //   display: inline;
-  //   color: rgb(58, 58, 58);
-  //   font-size: 40px;
-  // }
-  // p{
-  //   display: none;
-  // }
+  letter-spacing: -4px;
+  padding-left: 27px;
 }
 .date {
   min-height: 28px;
@@ -20,14 +13,14 @@
   margin-bottom: 20px;
 }
 .greeting {
-    font-size: 40px;
+  font-size: 30px;
   &__text {
     padding: 10px;
   }
   &__name {
-    max-width: 250px;
+    max-width: 204px;
     padding: 10px;
-    font-size: 40px;
+    font-size: 30px;
     background-color: transparent;
     &::placeholder {
       opacity: 0.6;
@@ -39,7 +32,6 @@
   height: 80px;
   position: absolute;
   top: 50%;
-  transform: translateY(-50%);
   cursor: pointer;
   background: none;
   svg {
@@ -67,4 +59,23 @@
 
 .slide-next {
   right: 20px;
+}
+
+@media screen and (max-width: 768px) {
+  .time {
+    width: 300px;
+    font-size: 70px;
+    letter-spacing: -2px;
+  }
+  .greeting {
+    font-size: 20px;
+    &__text {
+      padding: 2px;
+    }
+    &__name {
+      width: 150px;
+      padding: 0px;
+      font-size: 20px;
+    }
+  }
 }

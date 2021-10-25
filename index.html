@@ -38,7 +38,7 @@
           </ul>
         </div>
         <div class="weather">
-          <input type="text" class="city" placeholder="Enter city" value="Minsk" />
+          <input type="text" class="city" value="Minsk"/>
           <span class="weather-error weather-text"></span>
           <i class="weather-icon owf"></i>
           <div class="weather-error"></div>
@@ -63,52 +63,85 @@
         <date class="date"></date>
         <div class="greeting">
           <span class="greeting__text"></span>
-          <input type="text" placeholder="enter name" class="greeting__name" />
+          <input type="text" class="greeting__name" />
         </div>
       </main>
       <footer class="footer">
         <div class='quote-block'>
           <button class="change-quote"></button>
-          <div class="quote">Ходить по воде и разрабатывать программы, следуя ТЗ, очень просто… если они заморожены</div>
-          <div class="author">И. Берард</div>
+          <div class="quote"></div>
+          <div class="author"></div>
         </div>
         <button class="settings-button-open settings-icon player-icon"></button>
+        <div class="todo__body">
         <button class="todo__button">ToDo</button>
-        <div class="todo">
-          <div class="todo__header">To do list</div>
-          <ul class="todo__list"><span class="todo__list__placeholder">Create new ToDo</span>
-            <li>
-            </li>
-          </ul>
-          <input type="text" placeholder="New To Do" class="todo__input">
+          <div class="todo">
+            <div class="todo__header">To do list</div>
+            <ul class="todo__list">
+              <li>
+              </li>
+            </ul>
+            <input type="text" placeholder="New To Do" class="todo__input">
+          </div>
         </div>
         <div class="settings">
           <button class="settings-button-close settings-icon player-icon"></button>
-          <div class="setting__body">
-            <label class="switch">
-              <input type="checkbox" class="settings-lang">
-              <span class="slider round"></span>
-            </label>
+          <div class="settings__body">
+            <div class="settings__header">Settings</div>
             <div class="settings__hide-blocks">
-              <input type="checkbox" name="hide" class="settings-checkbox" id="block1">
-              <label for="block1">Player</button> </label>
-              <input type="checkbox" name="hide" class="settings-checkbox" id="block2">
-              <label for="block2">Time</label>
-              <input type="checkbox" name="hide" class="settings-checkbox" id="block3">
-              <label for="block3">Date</label>
-              <input type="checkbox" name="hide" class="settings-checkbox" id="block4">
-              <label for="block4">Quote</label>
-              <input type="checkbox" name="hide" class="settings-checkbox" id="block5">
-              <label for="block5">Greeting</label>
-              <input type="checkbox" name="hide" class="settings-checkbox" id="block6">
-              <label for="block6">Weather</label>
-              <input type="checkbox" name="hide" class="settings-checkbox" id="block7">
-              <label for="block7"></label>
+              <label class="settings__hide-blocks__label" for="c1">
+                <input type="checkbox" class="settings-checkbox" id="c1" name="c-group" >
+                <span class="label-text">Player</span>
+              </label>
+              <label class="settings__hide-blocks__label" for="c2">
+                <input type="checkbox" class="settings-checkbox" id="c2" name="c-group" checked>
+                <span class="label-text">Time</span>
+              </label>
+              <label class="settings__hide-blocks__label" for="c3">
+                <input type="checkbox" class="settings-checkbox" id="c3" name="c-group" checked>
+                <span class="label-text">Date</span>
+              </label>
+              <label class="settings__hide-blocks__label" for="c4">
+                <input type="checkbox" class="settings-checkbox" id="c4" name="c-group" checked>
+                <span class="label-text">Quote</span>
+              </label>
+              <label class="settings__hide-blocks__label" for="c5">
+                <input type="checkbox" class="settings-checkbox" id="c5" name="c-group" checked>
+                <span class="label-text">Greeting</span>
+              </label>
+              <label class="settings__hide-blocks__label" for="c6">
+                <input type="checkbox" class="settings-checkbox" id="c6" name="c-group" checked>
+                <span class="label-text">Weather</span>
+              </label>
+              <label class="settings__hide-blocks__label" for="c7">
+                <input type="checkbox" class="settings-checkbox" id="c7" name="c-group" checked>
+                <span class="label-text">ToDo</span>
+              </label>
+            </div>
+            <div class="settings__image">
+              <div class="image-API">
+                <input type="radio" class="image-API__radio" checked="checked" name="rb" id="rb1" />
+                <label for="rb1" class="image-API__label">GitHub</label>
+                <input type="radio" class="image-API__radio" name="rb" id="rb2" />
+                <label for="rb2" class="image-API__label">Flickr</label>
+                <input type="radio" class="image-API__radio" name="rb" id="rb3" />
+                <label for="rb3" class="image-API__label">Unsplash</label>
+              </div>
+              <input type="text" class="image-API__tag">
+              <div class="settings__language">
+                <span class="settings__language__text en">En</span>
+                <label class="switch">
+                  <input type="checkbox" class="settings-lang">
+                  <span class="slider round"></span>
+                </label>
+                <span class="settings__language__text ru">Ru</span>
+             </div>
             </div>
           </div>
         </div>
       </footer>
     </div>
+
     <script type="module" src="src/index.js"></script>
     <script type="module" src="src/date/date.js"></script>
     <script type="module" src="src/weather/weather.js"></script>

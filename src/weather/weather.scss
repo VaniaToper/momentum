@@ -4,16 +4,16 @@
   justify-content: space-between;
   align-items: flex-start;
   row-gap: 5px;
-  width: 500px;
+  width: 400px;
   min-height: 180px;
   text-align: left;
+  margin-left: 40px;
   &-icon {
     font-size: 80px;
-    margin: 20px 0;
   }
   &-text {
     color: white;
-    font-size: 25px;
+    font-size: 20px;
     line-height: 30px;
   }
   &-error {
@@ -35,5 +35,12 @@
     font-size: 25px;
     color: #fff;
     opacity: 0.6;
+  }
+}
+@media screen and (max-width: 768px) {
+  .weather {
+    &-text {
+      font-size: 15px;
+    }
   }
 }

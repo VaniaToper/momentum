@@ -1,10 +1,11 @@
 .time {
+  width: 400px;
   text-align: left;
   font-family: "Poppins", sans-serif;
-  min-height: 124px;
   margin-bottom: 10px;
   font-size: 100px;
-  letter-spacing: -2px;
+  letter-spacing: -4px;
+  padding-left: 27px;
 }
 
 .date {
@@ -14,15 +15,15 @@
 }
 
 .greeting {
-  font-size: 40px;
+  font-size: 30px;
 }
 .greeting__text {
   padding: 10px;
 }
 .greeting__name {
-  max-width: 250px;
+  max-width: 204px;
   padding: 10px;
-  font-size: 40px;
+  font-size: 30px;
   background-color: transparent;
 }
 .greeting__name::-webkit-input-placeholder {
@@ -46,8 +47,6 @@
   height: 80px;
   position: absolute;
   top: 50%;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
   cursor: pointer;
   background: none;
 }
@@ -79,4 +78,24 @@
 
 .slide-next {
   right: 20px;
+}
+
+@media screen and (max-width: 768px) {
+  .time {
+    width: 300px;
+    font-size: 70px;
+    letter-spacing: -2px;
+  }
+
+  .greeting {
+    font-size: 20px;
+  }
+  .greeting__text {
+    padding: 2px;
+  }
+  .greeting__name {
+    width: 150px;
+    padding: 0px;
+    font-size: 20px;
+  }
 }

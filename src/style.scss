@@ -1,3 +1,10 @@
+$darkGrey: #4b4b4b;
+$lightGrey: #9c9e9f;
+$white: #fff;
+$green: #06842c;
+$clouds: #ecf0f1;
+$midnight: #2c3e50;
+$wisteria: #8e44ad;
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap");
 @import url("/src/date/date.css");
 @import url("/src/weather/weather.css");
@@ -11,13 +18,14 @@
   color: white;
 }
 .wrapper {
-  min-width: 480px;
   min-height: 100vh;
   font-size: 16px;
   text-align: center;
   background-blend-mode: multiply;
   transition: background-image 0.5s ease-in-out;
   overflow: hidden;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 .header {
   display: flex;

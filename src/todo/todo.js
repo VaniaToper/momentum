@@ -5,19 +5,33 @@ const todoPlaceholder = document.querySelector('.todo__list__placeholder');
 const todoBody = document.querySelector('.todo');
 let i = 0;
 
+function setLocalStorage() {
+  localStorage.setItem('todoElements', todoList.innerHTML);
+  createToDo();
+}
+window.addEventListener('beforeunload', setLocalStorage);
+
+function getLocalStorage() {
+  if (localStorage.getItem('todoElements')) {
+    todoList.innerHTML = localStorage.getItem('todoElements');
+    createToDo();
+  }
+}
+window.addEventListener('load', getLocalStorage);
+
 const createToDo = () => {
-  todoPlaceholder.remove();
   if (todoInput.value != '') {
     todoList.innerHTML += `  <li class="todo__list__item">
-    <div class="todo__list__label"><input type="checkbox" id="${++i}">
+    <div class="todo__list__label"><input type="checkbox" class="todo__list__checkbox" id="${++i}">
     <label for="${i}" data-content="${todoInput.value}">${
       todoInput.value
     }</label></div><button class="todo__delete"></button>
   </li>`;
-    todoList.style.overflowY = 'scroll';
   }
+  todoList.style.overflowY = 'scroll';
   removeToDoEl();
 };
+
 todoInput.addEventListener('change', createToDo);
 
 const toggleTodo = () => {

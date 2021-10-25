@@ -1,11 +1,15 @@
+.quote-block {
+  position: relative;
+  z-index: 1;
+}
 .change-quote {
-  width: 100px;
-  height: 100px;
+  width: 80px;
+  height: 80px;
   margin-bottom: 30px;
   background: url("../../assets/img/reload.svg");
   background-size: cover;
   transition: 0.5s;
-  &:hover{
+  &:hover {
     opacity: 0.8;
   }
 }
@@ -21,4 +25,27 @@
   line-height: 55px;
   min-height: 20px;
   opacity: 0.9;
+}
+
+@media screen and (max-width: 1920px) {
+  .quote {
+    font-size: 30px;
+  }
+  .author {
+    font-size: 20px;
+    margin-bottom: 30px;
+  }
+  .change-quote {
+    width: 70px;
+    height: 70px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .quote {
+    font-size: 25px;
+  }
+  .author {
+    font-size: 15px;
+    line-height: 35px;
+  }
 }
