@@ -75,7 +75,7 @@ const setBackground = (randomNum) => {
   const img = new Image();
   img.src = `/assets/img/${part.part}/${randomNum}.jpg`;
   img.addEventListener('load', () => {
-    wrapper.style.background = `url("/assets/img/${part.part}/${randomNum}.jpg") center/cover`;
+    wrapper.style.background = `url("assets/img/${part.part}/${randomNum}.jpg") center/cover`;
   });
 };
 setBackground(randomNum);
