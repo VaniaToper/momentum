@@ -73,7 +73,7 @@ const getTimeOfDate = () => {
 const setBackground = (randomNum) => {
   let part = getTimeOfDate();
   const img = new Image();
-  img.src = `/assets/img/${part.part}/${randomNum}.jpg`;
+  img.src = `assets/img/${part.part}/${randomNum}.jpg`;
   img.addEventListener('load', () => {
     wrapper.style.background = `url("assets/img/${part.part}/${randomNum}.jpg") center/cover`;
   });
