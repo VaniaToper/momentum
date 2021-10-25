@@ -27,6 +27,7 @@
   line-height: 55px;
   min-height: 20px;
   opacity: 0.9;
+  margin-bottom: 30px;
 }
 
 @media screen and (max-width: 1920px) {
@@ -36,7 +37,6 @@
 
   .author {
     font-size: 20px;
-    margin-bottom: 30px;
   }
 
   .change-quote {
