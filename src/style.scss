@@ -18,7 +18,8 @@ $wisteria: #8e44ad;
   color: white;
 }
 .wrapper {
-  min-height: 100vh;
+  position: relative;
+  height: 97%;
   font-size: 16px;
   text-align: center;
   background-blend-mode: multiply;
@@ -56,4 +57,21 @@ $wisteria: #8e44ad;
   height: 30vh;
   min-height: 160px;
   padding: 20px;
+}
+.info {
+  width: 100vw;
+  height: 3%;
+  background: #f7f7f7;
+  font-size: 15px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  span{
+    color: black;
+  }
+  img{
+    width: 100px;
+    height: 30px;
+  }
 }

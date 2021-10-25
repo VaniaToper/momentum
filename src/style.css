@@ -95,7 +95,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .wrapper {
-  min-height: 100vh;
+  position: relative;
+  height: 97%;
   font-size: 16px;
   text-align: center;
   background-blend-mode: multiply;
@@ -161,4 +162,30 @@ h1, h2, h3, h4, h5, h6 {
   height: 30vh;
   min-height: 160px;
   padding: 20px;
+}
+
+.info {
+  width: 100vw;
+  height: 3%;
+  background: #f7f7f7;
+  font-size: 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.info span {
+  color: black;
+}
+.info img {
+  width: 100px;
+  height: 30px;
 }
