@@ -86,15 +86,12 @@ async function getUnsplashImage(tag) {
     tag = imageAPITag.value;
   } else tag = part.part;
   const url = `https://api.unsplash.com/photos/random?orientation=landscape&query=${tag}&client_id=I9t3C-gPIbaN7XhSRrja6qtBsnxHNkJBMQm7yvpk5rc`;
-  console.log(url);
   const res = await fetch(url);
   const data = await res.json();
   const img = new Image();
-  console.log(data.urls.regular);
   img.src = `${data.urls.regular}`;
   img.addEventListener('load', () => {
     wrapper.style.backgroundImage = `url(${data.urls.regular})`;
-    console.log('asd');
   });
 }
 
@@ -126,7 +123,7 @@ const getSlideNext = () => {
   }
   if (imageAPIRadio3.checked) {
     getUnsplashImage();
-  }
+  } else setBackground(randomNum)
 };
 
 const getSlidePrev = () => {

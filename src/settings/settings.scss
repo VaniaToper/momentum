@@ -40,7 +40,7 @@ $midnight: #2c3e50;
     position: absolute;
     width: 30px;
     height: 30px;
-    background: url("assets/img/settings.png");
+    background: url("../../assets/img/settings.png");
     background-size: contain;
     background-position: center center;
   }
@@ -138,7 +138,7 @@ $midnight: #2c3e50;
     left: 20px;
   }
   &-button-close {
-    background: url("assets/img/cancel.png");
+    background: url("../../assets/img/cancel.png");
     top: 20px;
     right: 20px;
   }
