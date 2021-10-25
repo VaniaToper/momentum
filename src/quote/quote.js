@@ -12,7 +12,7 @@ settingsCheckbox.addEventListener('change', () => {
 });
 
 async function getQuotes(lang = 'En') {
-  const quotes = `/src/quote/quotes${lang}.json`;
+  const quotes = `src/quote/quotes${lang}.json`;
   const res = await fetch(quotes);
   const data = await res.json();
   let randomNum = getRandomNum(data.length - 1, 1);
